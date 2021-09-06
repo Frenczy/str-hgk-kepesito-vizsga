@@ -1,4 +1,4 @@
-export interface School {
+export class School {
   _id?:string;
   name:string;
   city: string;

@@ -1,0 +1,11 @@
+.container{
+    display:flex;
+    justify-content: space-between;
+    margin-left: -0.7rem;
+    margin-right: -2rem;
+    
+}
+.container-md{
+    width: 550px;
+    
+}
