@@ -16,6 +16,18 @@ exports.findAll  = (req, res, next) => {
 
 
 exports.update = (req, res, next) => {
+    const id = req.params.id;
+    const { className } = req.body;
+    if (!className) {
+        return next(
+            new createError.BadRequest("Missing field"))}
+    const update = { className };
+    return service.update(req.params.id, update).then(building => {res.json(building)})
+            .catch(err=>{
+                next(new createError.InternalServerError(err.message))
+            })
+        
+
     const validationErrors = new Model(req.body).validateSync();
     if (validationErrors) {
         return next(
